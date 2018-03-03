@@ -1,0 +1,360 @@
+<html dir="rtl"> 
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <!-- pretty checkbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css
+  ">
+  <link rel="stylesheet" href="index.css">
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <!-- /////////// ANIMATION ///////// -->
+  
+  <div id="animation" class="container">
+    <div id="bm" class="row"></div>
+  </div>
+
+  <!-- //////////// Rows ////////////// -->
+  
+  <div id="menu">
+    <div class="menu-item">
+      <span>مين أقواس</span>
+      <img class="menu-arrow" src="assets/SVG/arrow-up.svg" alt="">
+    </div>
+    <div class="menu-item">
+      <span>آخر أخبارنا</span>
+      <img class="menu-arrow" src="assets/SVG/arrow-up.svg" alt="">
+    </div>
+    <div class="menu-item">
+      <span>أعمالنا وأصدقاؤنا</span>
+      <img class="menu-arrow" src="assets/SVG/arrow-up.svg" alt="">
+    </div>
+    <div class="menu-item">
+      <span>ابدأ مشروعك الآن</span>
+      <img class="menu-arrow" src="assets/SVG/arrow-up.svg" alt="">
+    </div>
+    <div class="menu-item"> 
+      <span class="d-none d-sm-flex">تواصل معنا</span> 
+      <div id="menu-icons"> 
+        <a href="tel:0590825052"><img src="assets/SVG/contact-call.svg" alt=""></a>
+        <a href="mailto:hi@aqwas.sa""><img src="assets/SVG/contact-email.svg" alt=""></a>
+        <a href="http://twitter.com/aqwas_sa"><img src="assets/SVG/contact-twitter.svg" alt=""></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Who is Aqwas -->
+
+
+  <div id="who" class="container-fluid">
+    <!-- Photo -->
+    <div id="img_container">
+      <div id="img">
+        <div class="back-img">
+          <div id="wall-svgs">
+            <object id="wall-line" type="image/svg+xml" data="assets/SVG/wall-line.svg" ></object>
+            <img id="wall" src="assets/SVG/wall.svg" alt="">
+          </div>
+          <div id="saudi-svgs">
+           <object id="saudi-line" type="image/svg+xml" data="assets/SVG/saudi-line.svg" ></object>
+           <img id="saudi" src="assets/SVG/saudi.svg" alt="">
+         </div>
+         <div id="icon-svgs">
+          <object id="icons-line" type="image/svg+xml" data="assets/SVG/icons-line.svg" ></object>
+          <img id="icons" src="assets/SVG/icons.svg" alt="">
+        </div>
+      </div>
+      <img  src="assets/SVG/person.svg" alt="">
+    </div>
+  </div>
+  <!-- Content -->
+  <div id="content">
+    <!-- Section 1 -->
+    <section id="section_1" class="section scrollabel">
+      <div class="section_content">
+        <h1>
+          أقواس
+        </h1>
+        <p>
+          مؤسسة سعودیة تسعى لتقديم حلول تقنية، ذات جودة عالية، بدءاً من تطبيقات الويب والهواتف الذكية إلى مشاريع ذات طابع أكثر تعقيدًا
+        </p>
+        <button id="video_btn" class="btn btn-special">
+          <span>ما عندك وقت ؟ شوف الفيديو</span>
+          <!-- <img src="assets/SVG/play_btn.svg" alt="" class="img img-responsive"> -->
+        </button>
+        <!-- separator -->
+        <div class="down_arrow">
+          <img src="assets/SVG/arrow_down.svg" alt="">
+        </div>
+      </div>
+    </section>
+    <!-- Section 2 -->
+    <section id="section_2" class="section scrollabel">
+      <div id="section2" class="section_content">
+        <h1>
+          رؤيتنا
+        </h1>
+        <p>
+          تطوير حلول برمجية مميزة، ينعكس أثرها على المجتمع، وترفع المعايير  الوطنية والعالمية في مجال هندسة البرمجيات
+        </p>
+        <!-- separator -->
+        <div class="down_arrow">
+          <img src="assets/SVG/arrow_down.svg" alt="">
+        </div>
+      </div>
+    </section>
+    <!-- Section 3 -->
+    <section id="section_3" class="section scrollabel">
+      <div class="section_content">
+        <h1>
+          طريقتنا
+        </h1>
+        <p>
+          دائماً في أقواس نعمل وفق المعايير والضوابط العالمية لهندسة البرمجيات. حبنا لحرفتنا تجعلنا نضع عقولنا وأرواحنا في كل مرحلة من مراحل هندسة البرمجيات سواء كانت في تصميم تجربة وواجهة المستخدم أو تطوير المنتج
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Aqwas News -->
+
+<div id="news" class="container-fluid">
+  <!-- XXXXX It will be added dynamically from JS XXXX -->
+</div>
+
+
+<!-- Aqwas Projects -->
+
+<div id="projects">
+  <a href="resources/portfolio-arabic.pdf"><button id="download-portfolio">تحميل ملف الأعمال</button></a>
+  <!-- XXXXX It will be added dynamically from JS XXXX -->
+</div>
+
+<!-- Start your project -->
+
+<div id="start" class="container">
+  <!-- before submission -->
+  <div id="start_form">
+    <!-- Step One -->
+    <div id="stepone">
+      <div class="step">
+        <h1 class="step-number">1</h1>
+        <h2 class="step-title">اختر نوع المشروع</h2>
+      </div>
+      <div id="services" class="row">
+        <div class="col-xs-6 col-sm-6 col-md-3">
+          <div id="web" class="service hovered">
+            <div class="service-icon">
+              <img class="img img-responsive" src="assets/start/SVG/start-web.svg" alt="">
+            </div>
+            <p class="service-name">
+              موقع الكتروني
+            </p>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+          <div id="mobile" class="service hovered">
+            <div class="service-icon">
+              <img class="img img-responsive" src="assets/start/SVG/start-mobile.svg" alt="">
+            </div>
+            <p class="service-name">
+              تطبيق جوال
+            </p>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+          <div id="cons" class="service hovered">
+            <div class="service-icon">
+              <img class="img img-responsive" src="assets/start/SVG/start-cons.svg" alt="">
+            </div>
+            <p class="service-name">
+              استشارة تقنية
+            </p>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+          <div id="ui" class="service hovered">
+            <div class="service-icon">
+              <img class="img img-responsive" src="assets/start/SVG/start-ui.svg" alt="">
+            </div>
+            <p class="service-name">
+              تصميم واجهة
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="other">
+        <input type="checkbox" id="other-service-check" class="switch input-check">
+        <label for="other-service"> مشروع آخر</label>
+        <input class="input-check" type="text" placeholder="نوع المشروع" name="other-service" id="other-service">
+      </div>
+    </div>
+    <!-- Separator -->
+    <div class="separator"></div>
+    <!-- Step Two -->
+    <div class="step">
+      <h1 class="step-number">2</h1>
+      <h2 class="step-title">حدد مجال المشروع</h2>
+    </div>
+    <div id="types">
+      <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-3">
+          <div id="islamic" class="type hovered">
+            <h4 class="name-ar">إسلامي</h4>
+            <p class="name-en">ISLAMIC</p>
+          </div>          
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-3">
+          <div id="business" class="type hovered">
+            <h4 class="name-ar">تجاري</h4>
+            <p class="name-en">business</p>
+          </div>          
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-3">
+          <div id="education" class="type hovered">
+            <h4 class="name-ar">تعليمي</h4>
+            <p class="name-en">education</p>
+          </div>          
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-3">
+          <div id="entertainment" class="type hovered">
+            <h4 class="name-ar">ترفيهي</h4>
+            <p class="name-en">entertainment</p>
+          </div>          
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-3">
+          <div id="food" class="type hovered">
+            <h4 class="name-ar">أكل وشرب</h4>
+            <p class="name-en">food</p>
+          </div>  
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-3">
+          <div id="game" class="type hovered">
+            <h4 class="name-ar">لعبة</h4>
+            <p class="name-en">game</p>
+          </div>          
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-3">
+          <div id="social" class="type hovered">
+            <h4 class="name-ar">تواصل</h4>
+            <p class="name-en">social</p>
+          </div>          
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-3">
+          <div id="personal" class="type hovered">
+            <h4 class="name-ar">شخصي</h4>
+            <p class="name-en">personal</p>
+          </div>          
+        </div>
+      </div>
+      <div class="other">
+        <input type="checkbox" id="other-type-check" class="switch input-check">
+        <label for="other-type"> مجال آخر</label>
+        <input class="input-check" type="text" placeholder="نوع المشروع" name="other-type" id="other-type">
+      </div>
+    </div>
+    <!-- Separator -->
+    <div class="separator"></div>
+    <!-- Step Theee -->
+    <div class="step">
+      <h1 class="step-number">3</h1>
+      <h2 class="step-title">اكتب معلوماتك لنتواصل معك</h2>
+    </div>
+    <!-- form -->
+    <form action="/">
+      <!-- NAME -->
+      <div id="form-name" class="form-row row">
+        <div class="col-xs-12 col-sm-3">
+          <h4 class="form-row-title">
+            اسمك الكامل
+          </h4>
+        </div>
+        <div class="form-inputs col-xs-12 col-sm-9">
+          <div class="select">
+            <select id="mr" name="mr">
+              <option value="السيد" >السيد</option>
+              <option value="السيدة">السيدة</option>
+            </select>
+          </div>
+          <input type="text" name="name" id="name">
+        </div>
+      </div>
+      <!-- MOBILE -->
+      <div id="form-mobile" class="form-row row">
+        <div class="col-xs-12 col-sm-3">
+          <h4 class="form-row-title">
+            رقم الجوال
+          </h4>
+        </div>
+        <div class="form-inputs col-xs-12 col-sm-9">
+          <input type="text" name="mobile" id="number">
+          <div class="select">
+            <select name="code" id="code">
+              <option value="+966" >+٩٦٦</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- EMAIL -->
+      <div id="form-email" class="form-row row">
+        <div class="col-xs-12 col-sm-3">
+          <h4 class="form-row-title">
+            البريد الإلكتروني
+          </h4>
+        </div>
+        <div class="form-inputs col-xs-12 col-sm-9">
+          <input type="text" name="email" id="email"></div>
+        </div>
+      </form>
+      <!-- Send Button -->
+      <button id="send-btn" class="btn btn-special">
+        إرسال
+      </button>
+    </div>
+    <!-- after submission -->
+    <div id="submitted_form">
+      <img src="assets/SVG/submitted-icn.svg" alt="">
+      <p>تم فتح ملف باسم</p>
+      <h2>السيد أسامة النجاح</h2>
+      <p>انتظر منا مكالمة في أقل من ٢٤</p>
+      <a href="https://www.twitter.com/aqwas_sa"><button class="btn">تواصل معنا على تويتر</button></a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ////////////////////////////////// JS /////////////////////////////////////// -->
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="bower_components/bodymovin/build/player/lottie.min.js"> </script>
+  <!-- Materialize JS -->
+  <script src="bower_components/materialize-rtl-master/dist/js/materialize.min.js"></script>
+  <script src="bower_components/Scrollify-master/jquery.scrollify.js"></script>
+  <script src="bower_components/animejs/anime.min.js"></script>
+  <!-- SMTP -->
+  <script src="https://smtpjs.com/v2/smtp.js"></script>
+  <script src="index.js"></script>
+  <!-- Vivus -->
+  <script src="bower_components/vivus/dist/vivus.min.js"></script>
+
+
+</body>
+</html>
