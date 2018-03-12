@@ -166,4 +166,16 @@ input[type="checkbox"].switch:checked:after{
   background: white;
 }
 
+button a{
+  color:white
+}
+
+button a:hover{
+  color:#4ABDB7;
+}
+
+button:hover{
+  color:#4ABDB7;
+}
+
 /* Switch 1 Specific Style End */

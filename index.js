@@ -173,26 +173,54 @@ var imgs = $(".back-img img");
 //   }
 // });
 
-played = [false,false,false]
-
-$(window).scroll(function(){
-  var oneSecHeight = window.screen.height/3;
-  console.log("height"+oneSecHeight)
-  var currentScroll = $(window).scrollTop();
-  console.log("scroll"+currentScroll)
-  if(currentScroll == 0 && !played[0]){
-    played = [true,false,false]
-    playAnimation(0)
-  }else if (currentScroll > oneSecHeight*1.8 && currentScroll < oneSecHeight*2.2 && !played[1]){
-    played = [false,true,false]
-    playAnimation(1)
-  }else if (currentScroll > oneSecHeight*2.8 && currentScroll < oneSecHeight*3.2 && !played[2]) {
-    played = [false,false,true]
-    playAnimation(2)
-  }else{
+if ( $(window).width() <= 576) {   
+ //Small Screens
+  played = [false,false,false]
+  $(window).scroll(function(){
+    var oneSecWidth = window.screen.width/3;
+    //console.log("width"+oneSecWidth)
+    var currentHScroll = $(window).scrollLeft()*-1
+    //console.log("h-scroll"+currentHScroll)
+    if(currentHScroll == 0 && !played[0]){
+      console.log("playing - 0")
+      played = [true,false,false]
+      playAnimation(0)
+    }else if (currentHScroll > oneSecWidth*0.5 && currentHScroll < oneSecWidth && !played[1]){
+      console.log("playing - 1")
+      played = [false,true,false]
+      playAnimation(1)
+    }else if (currentHScroll > oneSecWidth*1.5 && !played[2]) {
+      console.log("playing - 2")
+      played = [false,false,true]
+      playAnimation(2)
+    }else{
     // do nothing
-  }
-});
+    }
+  });
+} 
+else {
+  //Large Screens
+  //Small Screens
+  played = [false,false,false]
+  $(window).scroll(function(){
+    var oneSecHeight = window.screen.height/3;
+    console.log("height"+oneSecHeight)
+    var currentScroll = $(window).scrollTop();
+    console.log("scroll"+currentScroll)
+    if(currentScroll == 0 && !played[0]){
+      played = [true,false,false]
+      playAnimation(0)
+    }else if (currentScroll > oneSecHeight*1.8 && currentScroll < oneSecHeight*2.2 && !played[1]){
+      played = [false,true,false]
+      playAnimation(1)
+    }else if (currentScroll > oneSecHeight*2.8 && currentScroll < oneSecHeight*3.2 && !played[2]) {
+      played = [false,false,true]
+      playAnimation(2)
+    }else{
+    // do nothing
+    }
+  });
+}
 
 
 // $(function() {
@@ -469,45 +497,41 @@ $("#send-btn").click(function(){
   if(info.service === ""){info.service = $("#other-service").val()}
     if(info.type === ""){info.type = $("#other-type").val()}
       info.initials = $("#mr").val()
-    info.name = $("#name").val()
+    info.name = $("#name").val() 
     info.code = $("#code").val()
     info.number = $("#number").val()
     info.email = $("#email").val()
-    info.at = $("#at").val()
   // Check form input
-  checkFormInputs()
+  
+  data = `mailto:hi@aqwas.sa?subject=New Amazing Partner
+  &body=Salam Aqwas, %0D%0A%0D%0AI need a project. Check out the detials:
+  %0D%0A%0D%0AService:`+info.service+`
+  %0D%0AType:`+info.type+`
+  %0D%0AClient Name:`+info.initials+" "+info.name+`
+  %0D%0AMobile Number:`+info.code+" "+info.number+`
+  %0D%0AEmail:`+info.email+`
+  %0D%0A%0D%0ASalam,
+  %0D%0A`+info.name+``
+
+  $("#start_form").fadeOut('fast', function() {
+    if(info.name){
+      $("#submitted_content h2").text(info.initials+" "+info.name)
+    }else{
+      $("#submitted_content h2").text("إنسان رائع")
+    }
+    
+    $("#submitted_form").fadeIn('slow', function() {
+      window.location.href = data;
+    });
+
+  });
+
+  
 })
 
 function checkFormInputs(){
-  submitGoogleForm()
   if(info.number === "" && info.email === ""){
-
   }
-}
-
-// PHP 
-function email(){
-  $.ajax({ 
-    url: 'server/email.php?msg='+JSON.stringify(info)
-  }).done(function(){
-    $("#start_form, #submitted_form").fadeToggle();
-    $("#submitted_form").css('display', 'flex');
-  })
-}
-
-// JS SMTP
-function sendEmail(subject,message){
-  alert("inside")
-  Email.send("omar@aqwas.sa",
-    "omar@aqwas.sa",
-    subject,
-    message,
-    {
-      token: "47c7baf0-eb8e-4d88-aeeb-05bd523cf6d2",
-      callback : function done(message){
-
-      }
-    })
 }
 
 // Form Validation functions
@@ -522,42 +546,6 @@ function validateMobile(mobile){
   return re.test(String(mobile));
 }
 
-// Form Control
-
-
-
-function submitGoogleForm() {
-
-     var datastring = $("#form").serialize(); //(e.g entry.1671691832)
-     var URL = "https://docs.google.com/forms/d/e/1FAIpQLSdPbncLcfJpLN1X_zqDir71FYwMM1Y5eguU1kckHzUMPoX8mg/formResponse"
-
-     // entry.1823120212 = info.service
-     // entry.1823120212 = info.service
-     // entry.1984164996 = info.type 
-     // entry.1984164996 = info.type
-     // entry.348413308 = info.name
-     // entry.1948797042 = info.code + info.mobile
-     // entry.904030761 = info.email
-
-     console.log("ds "+datastring)
-
-     $.ajax({
-       url: URL,
-       type: 'POST',
-       dataType: 'json',
-       data: JSON.stringify(entry),
-       success: function (data) {
-          // Add code here
-          alert("Cool "+data)
-        }, error: function (error) {
-          // Add code here
-          alert("no "+error)
-        }
-      });
-
-   }
-
-
 
 // ANIMATIONS
 
@@ -565,22 +553,22 @@ function submitGoogleForm() {
 // Who
 
 function playAnimation(index){
-  // Show img 1
   console.log(index)
   $(".back-img").children().each(function(currentIndex, el) {
     if(currentIndex != index){
-      $(el).children().css('display', 'none');
+      $(el).css('display', 'none');
+    }else{
+      $(el).fadeIn()
     }
   });
   // Hide All 
   img = $(".back-img").children().eq(index).find('object');
-  img.show()
+  img.fadeIn()
   id = img.attr('id');
   vivus = new Vivus(id, {duration: 100,start: 'autostart'}, function(){
     img = $(".back-img").children().eq(index).find('img');
     id = img.attr('id');
     $("#"+id).fadeIn('fast');
-    vivus.reset()
   });
 }
 

@@ -318,6 +318,10 @@
 
 #submitted_form{
   display: none;
+}
+
+#submitted_content{
+  display: flex;
   height:70vh;
   -webkit-justify-content: center;
           justify-content: center;
@@ -541,14 +545,24 @@ form select{
     align-items: center;
   }
 
-  .back-img{
-    display: flex;
-    align-items:center;
-    justify-content:center;
+  .back-img img, .back-img object{
+    width:200px;
+    display: none;
+    z-index:-1;
   }
 
   .back-img img{
-    display: none;
+    position: absolute;
+    top:-2px;
+    z-index:-2;
+  }
+
+  #icons{
+    top:-8px;
+  }
+
+  #saudi{
+    top:-15px;
   }
 
 
