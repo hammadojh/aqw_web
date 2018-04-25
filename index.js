@@ -175,9 +175,9 @@ var imgs = $(".back-img img");
 
 if ( $(window).width() <= 576) {   
  //Small Screens
-  played = [false,false,false]
-  $(window).scroll(function(){
-    var oneSecWidth = window.screen.width/3;
+ played = [false,false,false]
+ $(window).scroll(function(){
+  var oneSecWidth = window.screen.width/3;
     //console.log("width"+oneSecWidth)
     var currentHScroll = $(window).scrollLeft()*-1
     //console.log("h-scroll"+currentHScroll)
@@ -195,31 +195,59 @@ if ( $(window).width() <= 576) {
       playAnimation(2)
     }else{
     // do nothing
-    }
-  });
+  }
+});
 } 
 else {
   //Large Screens
-  //Small Screens
   played = [false,false,false]
   $(window).scroll(function(){
     var oneSecHeight = window.screen.height/3;
     console.log("height"+oneSecHeight)
     var currentScroll = $(window).scrollTop();
     console.log("scroll"+currentScroll)
-    if(currentScroll == 0 && !played[0]){
+    if(currentScroll < oneSecHeight/2 && !played[0]){
       played = [true,false,false]
       playAnimation(0)
-    }else if (currentScroll > oneSecHeight*1.8 && currentScroll < oneSecHeight*2.2 && !played[1]){
+    }else if (currentScroll > oneSecHeight*2 && currentScroll < oneSecHeight*3 && !played[1]){
       played = [false,true,false]
       playAnimation(1)
-    }else if (currentScroll > oneSecHeight*2.8 && currentScroll < oneSecHeight*3.2 && !played[2]) {
+    }else if (currentScroll > oneSecHeight*4 && currentScroll < oneSecHeight*6 && !played[2]) {
       played = [false,false,true]
       playAnimation(2)
     }else{
     // do nothing
+  }
+});
+}
+
+// Smooth scrolling
+
+
+$('a[href^="#"]').on('click', function(event) {
+  var target = $(this.getAttribute('href'));
+  scrollTo(target)
+});
+
+
+function scrollTo(target){
+
+  if ( $(window).width() <= 576) {
+    if( target.length ) {
+      $('html, body').stop().animate({
+        scrollLeft: target.offset().left
+      }, 1000);
     }
-  });
+
+  }else{
+    if( target.length ) {
+      $('html, body').stop().animate({
+        scrollTop: target.offset().top - 75
+      }, 1000);
+    }
+  }
+
+  
 }
 
 
