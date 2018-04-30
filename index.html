@@ -39,8 +39,8 @@
       <span class="d-none d-sm-flex">تواصل معنا</span> 
       <div id="menu-icons"> 
         <a href="tel:0590825052"><img src="assets/SVG/contact-call.svg" alt=""></a>
-        <a href="mailto:hi@aqwas.sa""><img src="assets/SVG/contact-email.svg" alt=""></a>
-        <a href="http://twitter.com/aqwas_sa"><img src="assets/SVG/contact-twitter.svg" alt=""></a>
+        <a href="mailto:hi@aqwas.sa"><img src="assets/SVG/contact-email.svg" alt=""></a>
+        <a href="http://twitter.com/aqwas_sa" target="_blank"><img src="assets/SVG/contact-twitter.svg" alt=""></a>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
   <!-- Who is Aqwas -->
 
 
-  <div id="who" class="container-fluid">
+<div id="who" class="container">
     <!-- Photo -->
     <div id="img_container">
       <div id="img">
@@ -70,9 +70,9 @@
     </div>
   </div>
   <!-- Content -->
-  <div id="content">
+  <div id="content" class="scrollable-content">
     <!-- Section 1 -->
-    <section id="section_1" class="section scrollabel">
+    <section id="section_1" class="section">
       <div class="section_content">
         <h1>
           أقواس
@@ -91,7 +91,7 @@
       </div>
     </section>
     <!-- Section 2 -->
-    <section id="section_2" class="section scrollabel">
+    <section id="section_2" class="section">
       <div id="section2" class="section_content">
         <h1>
           رؤيتنا
@@ -108,7 +108,7 @@
       </div>
     </section>
     <!-- Section 3 -->
-    <section id="section_3" class="section scrollabel">
+    <section id="section_3" class="section">
       <div class="section_content">
         <h1>
           طريقتنا
@@ -352,7 +352,9 @@ crossorigin="anonymous"></script>
 <script src="bower_components/bodymovin/build/player/lottie.min.js"> </script>
 <!-- Materialize JS -->
 <script src="bower_components/materialize-rtl-master/dist/js/materialize.min.js"></script>
-<script src="bower_components/Scrollify-master/jquery.scrollify.js"></script>
+<!--<script src="bower_components/Scrollify-master/jquery.scrollify.js"></script>-->
+<script src="libs/snapscroll/jquery.snapscroll.js"></script>    
+<script src="libs/snapscroll/jquery.scroll_to.js"></script>    
 <script src="bower_components/animejs/anime.min.js"></script>
 <!-- SMTP -->
 <script src="https://smtpjs.com/v2/smtp.js"></script>

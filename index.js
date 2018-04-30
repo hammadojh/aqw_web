@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-
+$(function() {
+  $("div.scrollable-content").snapscroll();
+});
 ////////////////// INTRO ///////////////////
 
 // Stop
