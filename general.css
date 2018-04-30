@@ -30,8 +30,10 @@ element{
 
 .container-fluid{
   margin-top:75px;
+/*
   margin-right: 20px;
   margin-left: 20px;
+*/
 }
 
 .hidden{

@@ -1,19 +1,14 @@
 $(document).ready(function() {
-
-$(function() {
-  $("div.scrollable-content").snapscroll();
-});
 ////////////////// INTRO ///////////////////
-
+ $(function() {
+  $(".scrollable-content").snapscroll();
+});
 // Stop
 stopAnimation();
 function stopAnimation(){
   $("#animation").css('display', 'none');
   loadMenu();
 }
-
-
-
 // Animation
 
 var animation = bodymovin.loadAnimation({
@@ -106,9 +101,10 @@ $(".menu-item").click(function(event) {
   $(".menu-item").each(function(index, el) {
     if(index != clickedIndex){
       $(this).fadeToggle('fast', function() {
+       $('#content').removeClass('scrollable-content');
         if(index==4){
           // animate to top
-          clickedElement.toggleClass('topFixedItem',200);
+          clickedElement.toggleClass('topFixedItem');
           // show arrow
           clickedElement.find('.menu-arrow').fadeToggle();
           // show content
@@ -121,6 +117,8 @@ $(".menu-item").click(function(event) {
           // display flex for some sections
           if(clickedIndex == 0){
             $("#"+contents_ids[clickedIndex]).css('display', 'flex');
+       $('#content').addClass('scrollable-content');
+
           }
         }
       });

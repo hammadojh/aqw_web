@@ -22,6 +22,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   height:100vh;
+  overflow: hidden;    
 }
 
 #menu.expanded{
@@ -63,16 +64,13 @@
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/*
 .menu-item:hover {
   -webkit-transform: scale(1.02, 1.02);
   transform: scale(1.02, 1.02);
 }
-
 .menu-item:hover::after {
   opacity: 1;
 }
-*/
 
 
 .menu-arrow{
@@ -194,7 +192,7 @@
   .project{
     margin-bottom:150px;
     margin-top:100px;
-    width:100vw;
+    width:100%;
   }
 
   .project-icon{
@@ -236,7 +234,7 @@
 
 
   .bg-imgs{
-    width:100vw;
+    width:100%;
     display: flex;
     position:absolute;
     -webkit-justify-content: space-between;
