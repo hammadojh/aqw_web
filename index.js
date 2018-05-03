@@ -102,7 +102,7 @@ $(".menu-item").click(function(event) {
         $('#content').removeClass('scrollable-content');
         if(index==4){
           // animate to top
-          clickedElement.toggleClass('topFixedItem');
+          clickedElement.toggleClass('topFixedItem',200);
           // show arrow
           clickedElement.find('.menu-arrow').fadeToggle();
           // show content
