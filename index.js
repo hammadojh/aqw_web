@@ -1,8 +1,6 @@
 $(document).ready(function() {
 ////////////////// INTRO ///////////////////
- $(function() {
-  $(".scrollable-content").snapscroll();
-});
+
 // Stop
 stopAnimation();
 function stopAnimation(){
@@ -36,7 +34,7 @@ function loadMenu(){
       });
     });
   });
-  
+
 }
 
 function loadSection(number){
@@ -91,7 +89,7 @@ $("#menu-icons img").hover(function() {
 });
 
 
-// Menu Clicking 
+// Menu Clicking
 
 $(".menu-item").click(function(event) {
   if($(this).index()==4)return;
@@ -101,7 +99,7 @@ $(".menu-item").click(function(event) {
   $(".menu-item").each(function(index, el) {
     if(index != clickedIndex){
       $(this).fadeToggle('fast', function() {
-       $('#content').removeClass('scrollable-content');
+        $('#content').removeClass('scrollable-content');
         if(index==4){
           // animate to top
           clickedElement.toggleClass('topFixedItem');
@@ -117,18 +115,21 @@ $(".menu-item").click(function(event) {
           // display flex for some sections
           if(clickedIndex == 0){
             $("#"+contents_ids[clickedIndex]).css('display', 'flex');
-       $('#content').addClass('scrollable-content');
-
+            $('#content').addClass('scrollable-content');
           }
         }
+        $(function() {
+         $(".scrollable-content").snapscroll();
+        });
       });
+
     }
   });
 });
 
 function sectionLoaded(id){
   if(id === "#who"){
-    playAnimation(0) // the first one 
+    playAnimation(0) // the first one
   }else if (id === "#news"){
 
   }else if (id === "#projects"){
@@ -173,7 +174,7 @@ var imgs = $(".back-img img");
 //   }
 // });
 
-if ( $(window).width() <= 576) {   
+if ( $(window).width() <= 576) {
  //Small Screens
  played = [false,false,false]
  $(window).scroll(function(){
@@ -197,7 +198,7 @@ if ( $(window).width() <= 576) {
     // do nothing
   }
 });
-} 
+}
 else {
   //Large Screens
   played = [false,false,false]
@@ -247,7 +248,7 @@ function scrollTo(target){
     }
   }
 
-  
+
 }
 
 
@@ -366,7 +367,7 @@ $.getJSON("projects_data.json", function(json) {
 ////////////////// START FORM ///////////////////
 
 
-// hovering over the services 
+// hovering over the services
 
 function getOldSrc(img,suffex,ext){
   var src = img.attr("src");
@@ -388,7 +389,7 @@ function unselectAllServices(){
       $(el).find("img").attr('src',elOldSrc);
     }
     $(el).removeClass('selected')
-  }); 
+  });
 }
 
 function uncheck(id){
@@ -401,7 +402,7 @@ function uncheck(id){
 function unselectAllTypes(){
   $(".type").each(function(index, el) {
     $(el).removeClass('selected')
-  }); 
+  });
 }
 
 function selectService(service){
@@ -431,7 +432,7 @@ $(".service").hover(function() {
 
 services = ["web","mobile","cons","ui"]
 
-// form control 
+// form control
 
 var info = {
   service : "",
@@ -465,7 +466,7 @@ $(".type").click(function(event) {
     info.type = ""
   }else{
     unselectAllTypes();
-    uncheck("other-type-check") 
+    uncheck("other-type-check")
     $(this).addClass('selected')
     // form
     info.type = $(this).attr("id")
@@ -525,12 +526,12 @@ $("#send-btn").click(function(){
   if(info.service === ""){info.service = $("#other-service").val()}
     if(info.type === ""){info.type = $("#other-type").val()}
       info.initials = $("#mr").val()
-    info.name = $("#name").val() 
+    info.name = $("#name").val()
     info.code = $("#code").val()
     info.number = $("#number").val()
     info.email = $("#email").val()
   // Check form input
-  
+
   data = `mailto:hi@aqwas.sa?subject=New Amazing Partner
   &body=Salam Aqwas, %0D%0A%0D%0AI need a project. Check out the detials:
   %0D%0A%0D%0AService:`+info.service+`
@@ -547,14 +548,14 @@ $("#send-btn").click(function(){
     }else{
       $("#submitted_content h2").text("إنسان رائع")
     }
-    
+
     $("#submitted_form").fadeIn('slow', function() {
       window.location.href = data;
     });
 
   });
 
-  
+
 })
 
 function checkFormInputs(){
@@ -589,7 +590,7 @@ function playAnimation(index){
       $(el).fadeIn()
     }
   });
-  // Hide All 
+  // Hide All
   img = $(".back-img").children().eq(index).find('object');
   img.fadeIn()
   id = img.attr('id');
