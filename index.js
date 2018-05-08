@@ -2,17 +2,17 @@ $(document).ready(function() {
 ////////////////// INTRO ///////////////////
 
 // Stop
-stopAnimation();
-function stopAnimation(){
-  $("#animation").css('display', 'none');
-  loadMenu();
-}
+//stopAnimation();
+//function stopAnimation(){
+//  $("#animation").css('display', 'none');
+//  loadMenu();
+//}
 // Animation
 
 var animation = bodymovin.loadAnimation({
   container: document.getElementById("bm"),
   renderer: 'svg',
-  autoplay: false,
+  autoplay: true,
   loop:false,
   path: 'assets/logo_animation.json' // the path to the animation json
 });
