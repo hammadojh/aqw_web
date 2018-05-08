@@ -93,7 +93,7 @@ $("#menu-icons img").hover(function() {
 // Menu Clicking
 
 $(".menu-item").click(function(event) {
-      $('body').css('overflow', 'visible'); //To remove scroll after the logo animation
+$('body').css('overflow', 'visible'); //To remove scroll after the logo animation
   if($(this).index()==4)return;
   // hide all others
   var clickedElement = $(this);
@@ -101,7 +101,7 @@ $(".menu-item").click(function(event) {
   $(".menu-item").each(function(index, el) {
     if(index != clickedIndex){
       $(this).fadeToggle('fast', function() {
-        $('#content').removeClass('scrollable-content');
+//        $('#content').removeClass('scrollable-content');
         if(index==4){
           // animate to top
           clickedElement.toggleClass('topFixedItem',200);
@@ -117,12 +117,12 @@ $(".menu-item").click(function(event) {
           // display flex for some sections
           if(clickedIndex == 0){
             $("#"+contents_ids[clickedIndex]).css('display', 'flex');
-            $('#content').addClass('scrollable-content');
+//            $('#content').addClass('scrollable-content');
           }
         }
-        $(function() {
-         $(".scrollable-content").snapscroll();
-        });
+//        $(function() {
+//         $(".scrollable-content").snapscroll();
+//        });
       });
 
     }
