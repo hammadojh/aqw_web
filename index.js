@@ -21,6 +21,7 @@ var animation = bodymovin.loadAnimation({
 
 animation.addEventListener("complete",function(){
   loadMenu();
+    
 })
 
 
@@ -92,6 +93,7 @@ $("#menu-icons img").hover(function() {
 // Menu Clicking
 
 $(".menu-item").click(function(event) {
+      $('body').css('overflow', 'visible'); //To remove scroll after the logo animation
   if($(this).index()==4)return;
   // hide all others
   var clickedElement = $(this);

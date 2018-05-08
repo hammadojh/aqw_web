@@ -12,6 +12,9 @@
   height:100vh;
 }
 
+body{
+    overflow: hidden;
+}
 
 /*//////////////// MENU ///////////////*/
 #menu{
