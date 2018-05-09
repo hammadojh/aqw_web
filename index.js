@@ -2,17 +2,17 @@ $(document).ready(function() {
 ////////////////// INTRO ///////////////////
 
 // Stop
-//stopAnimation();
-//function stopAnimation(){
-//  $("#animation").css('display', 'none');
-//  loadMenu();
-//}
+stopAnimation();
+function stopAnimation(){
+  $("#animation").css('display', 'none');
+  loadMenu();
+}
 // Animation
 
 var animation = bodymovin.loadAnimation({
   container: document.getElementById("bm"),
   renderer: 'svg',
-  autoplay: true,
+  autoplay: false,
   loop:false,
   path: 'assets/logo_animation.json' // the path to the animation json
 });
@@ -93,7 +93,7 @@ $("#menu-icons img").hover(function() {
 // Menu Clicking
 
 $(".menu-item").click(function(event) {
-$('body').css('overflow', 'visible'); //To remove scroll after the logo animation
+$('body').css('overflow', 'auto'); //To remove scroll after the logo animation
   if($(this).index()==4)return;
   // hide all others
   var clickedElement = $(this);
@@ -104,12 +104,12 @@ $('body').css('overflow', 'visible'); //To remove scroll after the logo animatio
 //        $('#content').removeClass('scrollable-content');
         if(index==4){
           // animate to top
-          clickedElement.toggleClass('topFixedItem',200);
+          clickedElement.toggleClass('topFixedItem');
           // show arrow
           clickedElement.find('.menu-arrow').fadeToggle();
           // show content
           var contents_ids = ["who","news","projects","start"];
-          $("#"+contents_ids[clickedIndex]).fadeToggle('slow',function(){
+          $("#"+contents_ids[clickedIndex]).fadeToggle('fast',function(){
             sectionLoaded("#"+contents_ids[clickedIndex])
           });
           // fix menu class
@@ -287,6 +287,7 @@ $.getJSON("news_data.json", function(json) {
         <p>
         `+news_item.details+`
         </p>
+        `+news_item.image+`
         </div>
         </div>
         `
@@ -371,109 +372,109 @@ $.getJSON("projects_data.json", function(json) {
 
 // hovering over the services
 
-function getOldSrc(img,suffex,ext){
-  var src = img.attr("src");
-  var oldSrc = src.substring(0,src.indexOf(suffex)) + ext
-  return oldSrc
-}
-
-function getNewSrc(img,suffex,ext){
-  var src = img.attr("src");
-  var newSrc = src.substring(0,src.indexOf(ext)) + suffex+ext
-  return newSrc
-}
-
-function unselectAllServices(){
-  $(".service").each(function(index, el) {
-    if($(el).hasClass('selected')){
-      var img = $(el).find("img")
-      var elOldSrc = getOldSrc(img,"-active",".svg")
-      $(el).find("img").attr('src',elOldSrc);
-    }
-    $(el).removeClass('selected')
-  });
-}
-
-function uncheck(id){
-  element = document.getElementById(id);
-  if(element.checked){
-    element.click()
-  }
-}
-
-function unselectAllTypes(){
-  $(".type").each(function(index, el) {
-    $(el).removeClass('selected')
-  });
-}
-
-function selectService(service){
-  if(!service.hasClass('selected')){
-    service.addClass('selected')
-    service.find("img").attr('src', getNewSrc(service.find("img"),"-active",".svg"));
-  }
-}
-
-var oldSrc = ""
-
-$(".service").hover(function() {
-  if(!$(this).hasClass('selected')){
-    var src = $(this).find('img').attr("src");
-    oldSrc = src;
-    var newSrc = getNewSrc($(this).find('img'),"-active",".svg")
-    $(this).find('img').attr("src",newSrc);
-  }
-}, function() {
-  if(!$(this).hasClass('selected')){
-    oldSrc = getOldSrc($(this).find("img"),"-active",".svg")
-    $(this).find('img').attr("src",oldSrc);
-  }
-});
+//function getOldSrc(img,suffex,ext){
+//  var src = img.attr("src");
+//  var oldSrc = src.substring(0,src.indexOf(suffex)) + ext
+//  return oldSrc
+//}
+//
+//function getNewSrc(img,suffex,ext){
+//  var src = img.attr("src");
+//  var newSrc = src.substring(0,src.indexOf(ext)) + suffex+ext
+//  return newSrc
+//}
+//
+//function unselectAllServices(){
+//  $(".service").each(function(index, el) {
+//    if($(el).hasClass('selected')){
+//      var img = $(el).find("img")
+//      var elOldSrc = getOldSrc(img,"-active",".svg")
+//      $(el).find("img").attr('src',elOldSrc);
+//    }
+//    $(el).removeClass('selected')
+//  });
+//}
+//
+//function uncheck(id){
+//  element = document.getElementById(id);
+//  if(element.checked){
+//    element.click()
+//  }
+//}
+//
+//function unselectAllTypes(){
+//  $(".type").each(function(index, el) {
+//    $(el).removeClass('selected')
+//  });
+//}
+//
+//function selectService(service){
+//  if(!service.hasClass('selected')){
+//    service.addClass('selected')
+//    service.find("img").attr('src', getNewSrc(service.find("img"),"-active",".svg"));
+//  }
+//}
+//
+//var oldSrc = ""
+//
+//$(".service").hover(function() {
+//  if(!$(this).hasClass('selected')){
+//    var src = $(this).find('img').attr("src");
+//    oldSrc = src;
+//    var newSrc = getNewSrc($(this).find('img'),"-active",".svg")
+//    $(this).find('img').attr("src",newSrc);
+//  }
+//}, function() {
+//  if(!$(this).hasClass('selected')){
+//    oldSrc = getOldSrc($(this).find("img"),"-active",".svg")
+//    $(this).find('img').attr("src",oldSrc);
+//  }
+//});
 
 // Clicking the services
 
-services = ["web","mobile","cons","ui"]
+//services = ["web","mobile","cons","ui"]
 
 // form control
 
-var info = {
-  service : "",
-  type : "",
-  initials : "",
-  name : "",
-  code : "",
-  mobile : "",
-  email : "",
-  at : ""
-}
-
-$(".service").click(function(event) {
-  if($(this).hasClass('selected')){
-    $(this).removeClass('selected')
-    // form
-    info.service = ""
-  }else{
-    unselectAllServices();
-    uncheck("other-service-check")
-    $(this).addClass('selected')
-    // form
-    info.service = $(this).attr("id")
-  }
-});
-
-$(".type").click(function(event) {
-  if($(this).hasClass('selected')){
-    $(this).removeClass('selected')
-    // form
-    info.type = ""
-  }else{
-    unselectAllTypes();
-    uncheck("other-type-check")
-    $(this).addClass('selected')
-    // form
-    info.type = $(this).attr("id")
-  }
-});
+//var info = {
+//  service : "",
+//  type : "",
+//  initials : "",
+//  name : "",
+//  code : "",
+//  mobile : "",
+//  email : "",
+//  at : ""
+//}
+//
+//$(".service").click(function(event) {
+//  if($(this).hasClass('selected')){
+//    $(this).removeClass('selected')
+//    // form
+//    info.service = ""
+//  }else{
+//    unselectAllServices();
+//    uncheck("other-service-check")
+//    $(this).addClass('selected')
+//    // form
+//    info.service = $(this).attr("id")
+//  }
+//});
+//
+//$(".type").click(function(event) {
+//  if($(this).hasClass('selected')){
+//    $(this).removeClass('selected')
+//    // form
+//    info.type = ""
+//  }else{
+//    unselectAllTypes();
+//    uncheck("other-type-check")
+//    $(this).addClass('selected')
+//    // form
+//    info.type = $(this).attr("id")
+//  }
+//});
 
 
 // add arrow to the custom drop down menu

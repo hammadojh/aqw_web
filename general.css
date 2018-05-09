@@ -180,17 +180,22 @@ input[type="checkbox"].switch:checked:after{
   height:60px;
   background: linear-gradient(to right, #4ABDB7, #3B9DBF);
   padding: 5px 20px;
-  -webkit-box-shadow: 0 10px 40px rgba(0,0,0,0.34);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.34);
+  -webkit-box-shadow: 0 1px 2px lightgrey;
+  box-shadow: 0 1px 2px lightgrey;
   color:white;
   -webkit-border-radius: 70px;
   border-radius: 70px;
   border:none;
+    cursor: pointer;
 }
 
 .btn-special:hover{
   color:#4ABDB7;
   background: white;
+  transform: scale(1.1);
+transform: translateY(-10px);
+box-shadow: 0 5px 15px lightgrey;
+    transition: transform 500ms ease-in-out; 
 }
 
 button a{

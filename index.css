@@ -85,14 +85,16 @@ body{
 .topFixedItem{
   position:fixed;
   top:0px;
-  height:75px;
+  height:60px;
   width:100vw;
-  font-size:2em;
+  font-size:28px;
   z-index:10;
+/*
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+*/
 }
 
 /* icons */
@@ -330,12 +332,6 @@ body{
     bottom:40px;
   }
 
-
-  .hovered:hover{
-    background:linear-gradient(to right, #4ABDB7, #3B9DBF);
-    color:white;
-  }
-
   .step{
     display:flex;
     -webkit-justify-content: flex-start;
@@ -370,17 +366,47 @@ body{
           margin-bottom:10px;
         }
 
-        .service{
+.service{
 /*   width:150px;
 */  padding:25px;
 height:200px;
 padding-bottom:10px;
 -webkit-border-radius: 20px;
 border-radius: 20px;
--webkit-box-shadow: 0 10px 30px lightgrey;
-box-shadow: 0 10px 30px lightgrey;
+-webkit-box-shadow: 0 1px 2px lightgrey;
+box-shadow: 0 1px 2px lightgrey;
 text-align:center;
 margin-bottom:20px;
+}
+
+
+.hovered { 
+    transition: transform 500ms ease-in-out; 
+}
+
+.hovered:hover{
+    background:linear-gradient(to right, #4ABDB7, #3B9DBF);
+    cursor: pointer;
+    transform: scale(1.1);
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px lightgrey;
+    color: white;
+  }
+
+.hovered:hover g {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
+}
+
+.hovered:hover g > rect, .hovered:hover g > polygon {
+  stroke: white;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .service-icon{
@@ -423,8 +449,8 @@ margin-bottom:20px;
   padding-bottom:1px;
   -webkit-border-radius: 50px;
   border-radius: 50px;
-  -webkit-box-shadow: 0 10px 30px lightgrey;
-  box-shadow: 0 10px 30px lightgrey;
+  -webkit-box-shadow: 0 1px 2px lightgrey;
+  box-shadow: 0 1px 2px lightgrey;
   text-align:center;
 }
 
@@ -504,7 +530,6 @@ form select{
 
   /* Who */
 
-
   #img_container{
     position:fixed;
     top:0;
@@ -513,13 +538,16 @@ form select{
     height:45vh;
     margin-top:150px;
     margin-bottom:0px;
+/*
     display: flex;
     align-items:center;
     justify-content:center;
+*/
     background: white;
     z-index:-1;
   }
 
+/*
   #img{
     display:flex;
     -webkit-flex-direction: column;
@@ -530,6 +558,7 @@ form select{
     -webkit-align-items: center;
     align-items: center;
   }
+*/
 
   .back-img img, .back-img object{
     display: none;
