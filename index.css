@@ -500,7 +500,7 @@ form p{
 #at{
 }
 
-#send-btn{
+#send-btn, #submit-form{
   width:100%;
   margin-top:20px;
   margin-bottom:20px;
@@ -514,7 +514,6 @@ form select{
   color:white;
   background: linear-gradient(to right, #4ABDB7, #3B9DBF);
 }
-
 
 /* TEST THEN REMOVE */
 
@@ -713,3 +712,172 @@ form select{
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {}
+
+
+.checked {
+  margin-bottom: 25px;    
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 4s linear forwards;
+  transition: all ease-in 0.3s;
+  animation-delay: 0.8s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#submitted-content {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 00; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 150px;
+    background-color: rgb(255,255,255); /* Black background with opacity */
+    z-index: 99999; /* Specify a stack order in case you're using a different order for other elements */
+    display: none;
+}
+
+.trapdoor {
+  position: absolute;
+  top: 76%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -25px;
+  width: 200px;
+  height: 50px;
+  box-shadow: inset -7px 0px 12px -8px rgba(0, 0, 0, 0.3), inset 7px 0px 12px -8px rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+}
+.trapdoor:hover {
+  background: #fff;
+}
+/*
+.trapdoor:hover .door {
+  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.4);
+  -webkit-transform: scale(1.08);
+  -moz-transform: scale(1.08);
+  -ms-transform: scale(1.08);
+  -o-transform: scale(1.08);
+  transform: scale(1.08);
+}
+*/
+.trapdoor:hover .top {
+  top: -50%;
+}
+.trapdoor:hover .bottom {
+  top: 100%;
+}
+.trapdoor .twitter-follow-button {
+  margin-left: -77px;
+  position: absolute !important;
+  margin-top: -14px;
+  left: 50%;
+  top: 50%;
+}
+
+.top {
+  top: 0%;
+  left: 0px;
+}
+.top:before {
+  top: 5px;
+}
+
+.bottom {
+  top: 50%;
+  left: 0px;
+}
+.bottom:before {
+  top: -20px;
+}
+
+.door {
+  -webkit-transition: top 400ms, box-shadow 200ms, -webkit-transform 300ms;
+  -moz-transition: top 400ms, box-shadow 200ms, -moz-transform 300ms;
+  -ms-transition: top 400ms, box-shadow 200ms, -ms-transform 300ms;
+  -o-transition: top 400ms, box-shadow 200ms, -o-transform 300ms;
+  transition: top 400ms, box-shadow 200ms, transform 300ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-color: #fff;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  z-index: 2;
+  height: 50%;
+}
+.door:before {
+  font-family: "tweet", sans-serif;
+  position: absolute;
+  font-size: 35px;
+  display: block;
+  color: #4099FF;
+  content: "";
+  width: 0px;
+  height: 20px;
+  left: 60%;
+}
+
+@font-face {
+  font-family: "tweet";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/277/tweet.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.back-btn{
+    float: left;
+    margin: 15px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+
+#submitted-content {
+    animation: fadein 0.2s;
+    -moz-animation: fadein 0.2s; /* Firefox */
+    -webkit-animation: fadein 0.2s; /* Safari and Chrome */
+    -o-animation: fadein 0.2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}

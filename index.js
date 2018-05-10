@@ -369,7 +369,6 @@ $.getJSON("projects_data.json", function(json) {
 
 ////////////////// START FORM ///////////////////
 
-
 // hovering over the services
 
 //function getOldSrc(img,suffex,ext){
@@ -623,35 +622,31 @@ $(".service, .type, .btn").mousedown(function(){
 });
 
 
+var $form = $('#projects-form'),
+    url = 'https://script.google.com/macros/s/AKfycbwmoJ0G4lWevHVPdKP3Oi3ut_P-x9_PvF1xBJXO5-nbqMTbDvs/exec'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$('#submit-form').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeArray()
+  }).success(
+      $('#submitted-content').fadeIn()
+  );
+})
 });
+
+function assignProjectType (el) {
+   $('#project-type').val(el.id);
+    $('.service').removeClass('selected');
+   $(el).addClass('selected');
+
+}
+
+function assignProjectField (el) {
+   $('#project-field').val(el.id);
+        $('.type').removeClass('selected');
+   $(el).addClass('selected');
+}
