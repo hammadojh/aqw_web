@@ -1,0 +1,433 @@
+$color-1: #4ABDB7
+$color-2: #47B8B9
+$color-3: #44B1BA
+$color-4: #3FA9BD
+$color-5: #3B9DBF
+$darkSilver: #606263
+$lightSilver: #D0D2D3
+$white: #FFF
+$darkGray: #58595B
+
+@font-face
+  font-family: RegularFont
+  src: url('../fonts/font.ttf')
+@font-face
+  font-family: MediumFont
+  src: url('../fonts/font-med.ttf')
+@font-face
+  font-family: BoldFont
+  src: url('../fonts/font-bold.ttf')
+@font-face
+  font-family: DubaiRegular
+  src: url('../fonts/DubaiRegular.ttf')
+
+body
+  font-family: DubaiRegular
+  direction: rtl
+  text-align: right
+  color: $darkSilver
+  overflow: hidden
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+    background-color: #F5F5F5
+  &::-webkit-scrollbar
+    width: 12px
+    background-color: #F5F5F5
+  &::-webkit-scrollbar-thumb
+    border-radius: 10px
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+    background: linear-gradient(to right, #4ABDB7, #3B9DBF)
+.body-overflow
+  overflow: auto
+.line-height-45
+  line-height: 45px
+.form-control:focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, .form-control:focus, .form-control:hover
+  outline: 0
+  box-shadow: none
+a:active, a:focus, a:hover
+   text-decoration: none
+h1, h2, h3, h4, h5, h6
+   font-family: RegularFont
+/********************Main page********************/
+.card
+  border: none
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1)
+  border-radius: 0px
+  .card-header
+    border-radius: 0px
+    height: 18vh
+    border: none
+    -webkit-align-items: center
+    align-items: center
+    -webkit-justify-content: space-between
+    justify-content: space-between
+    display: flex
+    cursor: pointer
+    &:hover
+      -webkit-transform: scale3d(1.01, 1.01, 1)
+      transform: scale3d(1.01, 1.01, 1)
+      -webkit-transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)
+    .arrow-up
+      height: 15px
+      display: none
+    h5
+      color: $white
+      font-size: 3em
+  .card-body
+    display: none
+    padding: 0px
+    padding-top: 100px
+    position: absolute
+    left: 0
+    right: 0
+.fixed-header
+  position: fixed
+  top: 0px
+  height: 60px !important
+  width: 100%
+  z-index: 10
+  left: 0
+  right: 0
+  transition: all ease-out 0.3s
+  h5
+    font-size: 28px !important
+ul
+  margin-bottom: 0px
+  .list-inline-item
+    margin-right: 0.5rem
+    img
+      margin-left: 10px
+      margin-right: 10px
+      height: 7vh
+/********************News********************/
+#news
+  max-width: 720px
+  .year
+    color: $lightSilver
+    font-size: 3em
+    margin: 20px 0px
+  .news-row
+    margin: 45px auto
+    display: flex
+    -webkit-flex-direction: row
+    -ms-flex-direction: row
+    flex-direction: row
+    .month
+      font-size: 1em
+      color: $lightSilver
+  .bullet
+    width: 25px
+    background: linear-gradient(to top, #4ABDB7, #3B9DBF)
+    margin: 0 15px
+    -webkit-border-radius: 30px
+    border-radius: 30px
+    height: 50px
+/********************Projects********************/
+#projects
+  margin-bottom: 200px
+  text-align: center
+.project
+  margin-bottom: 150px
+  margin-top: 100px
+  width: 100%
+.project-icon
+  height: 150px
+  margin-bottom: 20px
+.project-name
+  margin-top: -40px
+  margin-bottom: 20px
+  color: #118E90
+  .app
+    font-size: 1em
+    margin-bottom: 0px
+.bg-imgs
+  width: 100%
+  display: flex
+  position: absolute
+  -webkit-justify-content: space-between
+  justify-content: space-between
+  z-index: -10
+  img
+    height: 400px
+.separator
+  height: 1px
+  width: 70vw
+  background: rgb(230, 230, 230)
+  margin: auto
+#projects .separator
+  max-width: 500px
+  &:last-child
+    display: none
+.project-description
+    font-size: 1em
+    color: grey
+    margin-bottom: 30px
+    max-width: 50vw
+    margin-left: auto
+    margin-right: auto
+.clients
+  padding-top: 30px
+  padding-bottom: 50px
+  .client-box
+    border: 1px solid $lightSilver
+    border-radius: 25px
+    width: 100%
+    height: 210px
+    margin-top: 15px
+    -webkit-align-items: center
+    align-items: center
+    -webkit-justify-content: space-between
+    justify-content: space-between
+    display: flex
+    padding: 10px
+    img
+      height: 150px
+      margin: 0 auto
+/********************Start project********************/
+.project-type
+  padding: 25px 0px 25px 0px
+  height: 200px
+  border-radius: 20px
+  box-shadow: 0 1px 2px lightgrey
+  text-align: center
+  margin-bottom: 20px
+  transition: transform 500ms ease-in-out
+  &:hover
+    background: linear-gradient(to right, #4ABDB7, #3B9DBF)
+    cursor: pointer
+    transform: scale(1.1)
+    transform: translateY(-10px)
+    box-shadow: 0 5px 15px lightgrey
+    color: $white
+    g
+      stroke-dasharray: 1000
+      stroke-dashoffset: 1000
+      animation: dash 5s linear forwards
+      polygon, rect, polyline, line, circle
+       stroke: $white
+  h6
+    padding-top: 30px
+.project-field
+  padding: 5px
+  border-radius: 50px
+  box-shadow: 0 1px 2px lightgrey
+  text-align: center
+  margin-bottom: 20px
+  transition: transform 500ms ease-in-out
+  &:hover
+    background: linear-gradient(to right, #4ABDB7, #3B9DBF)
+    cursor: pointer
+    transform: scale(1.1)
+    transform: translateY(-10px)
+    box-shadow: 0 5px 15px lightgrey
+    color: $white
+.step-number
+  text-align: center
+  color: $color-4
+.selected
+  color: $white
+  background: linear-gradient(to right, #4ABDB7, #3B9DBF)
+  g
+    polygon, rect, polyline, line, circle
+      stroke: $white
+/********************General********************/
+.row-width
+  width: 65%
+  margin: 0 auto
+.uppercase-text
+  text-transform: uppercase
+form
+    select.form-control
+      height: 38px !important
+    select.form-control, input.form-control
+      border: none
+      border-bottom: 1px solid $lightSilver
+      border-radius: 0px
+      box-shadow: none
+input[type="checkbox"].switch
+  font-size: 30px
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  width: 2em
+  height: 1em
+  background: #eeee
+  border-radius: 3em
+  position: relative
+  cursor: pointer
+  outline: none
+  -webkit-transition: all .2s ease-in-out
+  transition: all .2s ease-in-out
+  &:checked
+    background: #4ABDB7
+  &:after
+    position: absolute
+    content: ""
+    width: 1em
+    height: 1em
+    border-radius: 50%
+    background: #fff
+    -webkit-box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.3)
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.3)
+    -webkit-transform: scale(0.7)
+    transform: scale(0.7)
+    left: 0
+    -webkit-transition: all .2s ease-in-out
+    transition: all .2s ease-in-out
+  &:checked:after
+    left: calc(100% - 1em)
+#other-type, #other-service
+  display: none
+  animation: fadein 2s
+  -moz-animation: fadein 2s
+  -webkit-animation: fadein 2s
+  -o-animation: fadein 2s
+  transition: all ease-out 0.3s
+.ltr-input
+  input.form-control
+    direction: ltr
+section
+  padding: 30px 0px 30px 0px
+.p-0
+  padding: 0px
+.btn
+  border-radius: 50px
+  background: linear-gradient(to right, #4ABDB7, #3B9DBF)
+  color: $white
+  box-shadow: 0 1px 2px lightgrey
+  height: 50px
+.full-width-btn
+  width: 100%
+.fixed-btn
+  position: fixed
+  bottom: 15px
+  left: 15px
+  z-index: 9
+/********************Meen aqwas********************/
+.images
+  position: fixed
+  top: 35px
+  left: 0px
+  width: 50vw
+  height: 100vh
+  display: flex
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-align-items: center
+  align-items: center
+  img
+    margin-top: -55px
+.content-container
+  width: 50vw
+  // height: 100vh
+.content
+  height: 100vh
+  -webkit-align-items: center
+  align-items: center
+  -webkit-justify-content: space-between
+  justify-content: space-between
+  display: flex
+.wall-svg
+  display: block
+  height: 180px
+  width: 100%
+  transition: transform 500ms ease-in-out
+  #Layer_1-2
+    animation: fadein 2s
+    -moz-animation: fadein 2s
+    -webkit-animation: fadein 2s
+    -o-animation: fadein 2s
+  g
+    stroke-dasharray: 1000
+    stroke-dashoffset: 1000
+    animation-delay: 3s
+    animation: dash 5s linear forwards
+.vision-svg, .icons-svg
+  display: none
+  height: 180px
+  width: 100%
+  transition: transform 500ms ease-in-out
+  #Layer_1-2
+    animation: fadein 2s
+    -moz-animation: fadein 2s
+    -webkit-animation: fadein 2s
+    -o-animation: fadein 2s
+  g
+    stroke-dasharray: 1000
+    stroke-dashoffset: 1000
+    animation-delay: 3s
+    animation: dash 5s linear forwards
+@keyframes dash
+  to
+    stroke-dashoffset: 0
+@keyframes fadein
+  from
+    opacity: 0
+  to
+    opacity: 1
+#submitted-content
+  position: fixed
+  display: block
+  width: 100%
+  height: 100%
+  top: 00
+  left: 0
+  right: 0
+  bottom: 0
+  padding-top: 150px
+  background-color: rgb(255, 255, 255)
+  z-index: 99999
+  display: none
+
+#submitted-content
+  animation: fadein 0.4s
+  -moz-animation: fadein 0.4s
+  -webkit-animation: fadein 0.4s
+  -o-animation: fadein 0.4s
+@keyframes fadein
+  from
+    opacity: 0
+  to
+    opacity: 1
+@-moz-keyframes fadein
+  from
+    opacity: 0
+  to
+    opacity: 1
+@-webkit-keyframes fadein
+  from
+    opacity: 0
+  to
+    opacity: 1
+@-o-keyframes fadein
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.footer, .main-footer
+  background-color: $darkGray
+  height: 10vh
+  -webkit-align-items: center
+  align-items: center
+  -webkit-justify-content: space-between
+  justify-content: space-between
+  display: flex
+.footer-display, .logo-display
+  display: none
+/********************@Media********************/
+@media screen and (max-width: 767px)
+  .row-width
+    width: 100%
+  .bg-imgs
+    display: none
+  .hidden-xs
+    display: none
+  .visible-xs
+    display: block
+  .project
+    margin-top: 50px
+    margin-bottom: 70px
+  .clients, #projects
+    margin-bottom: 0px
