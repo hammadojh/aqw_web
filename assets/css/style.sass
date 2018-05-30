@@ -46,6 +46,8 @@ body
   box-shadow: none
 a:active, a:focus, a:hover
    text-decoration: none
+.main-heading
+  color: $color-1
 h1, h2, h3, h4, h5, h6
    font-family: RegularFont
 /********************Main page********************/
@@ -245,6 +247,16 @@ form
       border-bottom: 1px solid $lightSilver
       border-radius: 0px
       box-shadow: none
+.ltr-styled-select
+  background: url('../images/svg/arrow_down_blue.svg') no-repeat right
+  -webkit-appearance: none
+  background-position-x: 67px
+  background-size: 18px
+.rtl-styled-select
+  background: url('../images/svg/arrow_down_blue.svg') no-repeat left
+  -webkit-appearance: none
+  background-position-x: 5px
+  background-size: 18px
 input[type="checkbox"].switch
   font-size: 30px
   -webkit-appearance: none
@@ -317,7 +329,7 @@ section
   -webkit-align-items: center
   align-items: center
   img
-    margin-top: -55px
+    margin-top: -70px
 .content-container
   width: 50vw
   // height: 100vh
@@ -328,7 +340,7 @@ section
   -webkit-justify-content: space-between
   justify-content: space-between
   display: flex
-.wall-svg
+.wall-svg, .mobile-svg
   display: block
   height: 180px
   width: 100%
@@ -367,24 +379,24 @@ section
   to
     opacity: 1
 #submitted-content
+  -webkit-align-items: center
+  align-items: center
+  display: none
   position: fixed
-  display: block
   width: 100%
   height: 100%
-  top: 00
+  top: 0
   left: 0
   right: 0
   bottom: 0
-  padding-top: 150px
   background-color: rgb(255, 255, 255)
   z-index: 99999
-  display: none
-
-#submitted-content
-  animation: fadein 0.4s
-  -moz-animation: fadein 0.4s
-  -webkit-animation: fadein 0.4s
-  -o-animation: fadein 0.4s
+  animation: fadein 0.5s
+  -moz-animation: fadein 0.5s
+  -webkit-animation: fadein 0.5s
+  -o-animation: fadein 0.5s
+.flex-display
+  display: flex !important
 @keyframes fadein
   from
     opacity: 0
@@ -414,7 +426,7 @@ section
   -webkit-justify-content: space-between
   justify-content: space-between
   display: flex
-.footer-display, .logo-display
+.footer-display
   display: none
 /********************@Media********************/
 @media screen and (max-width: 767px)
@@ -431,3 +443,5 @@ section
     margin-bottom: 70px
   .clients, #projects
     margin-bottom: 0px
+  .content
+    height: 82vh

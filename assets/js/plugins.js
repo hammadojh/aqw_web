@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 // Colors
   var aqwasColors = ['#4ABDB7','#47B8B9','#44B1BA','#3FA9BD','#3B9DBF']
   $(".card-header").each(function(index){
@@ -15,7 +16,6 @@ $(document).ready(function(){
       if(index != clickedIndex){
         $(this).toggle(function( ) {
           if(index==4){
-            clickedElement.find('.white-logo').toggleClass('logo-display');
             $('.main-footer').toggleClass('footer-display');
             $('body').toggleClass('body-overflow');
             clickedElement.toggleClass('fixed-header');
@@ -32,21 +32,26 @@ $(document).ready(function(){
 
   $('#submit-form').on('click', function(e) {
     e.preventDefault();
+    var title = $('#title').find(":selected").text();
+    var fullName = $('#full-name').val();
     var jqxhr = $.ajax({
       url: url,
       method: "GET",
       dataType: "json",
       data: $form.serializeArray()
     }).success(
-        $('#submitted-content').fadeIn()
+        $('#submitted-content').addClass('flex-display'),
+        $('#user-info').html(title + " " + fullName)
     );
   })
-// Other projects input
+// Other inputs
 $(".switch").on("change", function(event) {
      if($(this).is(":checked")) {
        $(this).parent().next().children('label').fadeOut();
         $(this).parent().next().children('input').fadeIn();
         $(this).parent().parent().prev().children().children('.disabled-box').css('pointer-events', 'none');
+        $(this).parent().parent().prev().children().children('.disabled-box').removeClass('selected');
+        $(this).parent().parent().prev().children('.empty-input').val(' ');
      } else {
        $(this).parent().next().children('label').fadeIn();
        $(this).parent().next().children('input').fadeOut();
@@ -63,7 +68,7 @@ $(".switch").on("change", function(event) {
          });
      });
  });
-
+// SVG
  $('#first').on('inview', function (event, visible) {
   if (visible == true) {
     $('.vision-svg').css('display', 'none');
@@ -96,13 +101,13 @@ $('#third').on('inview', function (event, visible) {
 // Project type id
   function assignProjectType (el) {
      $('#project-type').val(el.id);
-      $('.project-type').removeClass('selected');
+     $('.project-type').removeClass('selected');
      $(el).addClass('selected');
   }
 // Project field id
   function assignProjectField (el) {
      $('#project-field').val(el.id);
-          $('.project-field').removeClass('selected');
+     $('.project-field').removeClass('selected');
      $(el).addClass('selected');
   }
 // News
