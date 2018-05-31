@@ -32,7 +32,6 @@ $(document).ready(function(){
 
   $('#submit-form').on('click', function(e) {
     e.preventDefault();
-    var title = $('#title').find(":selected").text();
     var fullName = $('#full-name').val();
     var jqxhr = $.ajax({
       url: url,
@@ -41,7 +40,7 @@ $(document).ready(function(){
       data: $form.serializeArray()
     }).success(
         $('#submitted-content').addClass('flex-display'),
-        $('#user-info').html(title + " " + fullName)
+        $('#user-info').html(fullName)
     );
   })
 // Other inputs
@@ -68,34 +67,16 @@ $(".switch").on("change", function(event) {
          });
      });
  });
+
 // SVG
- $('#first').on('inview', function (event, visible) {
-  if (visible == true) {
-    $('.vision-svg').css('display', 'none');
-    $('.wall-svg').css('display', 'block');
-    $('.icons-svg').css('display', 'none');
-  } else {
-    $('.wall-svg').css('display', 'none');
-  }
-});
- $('#second').on('inview', function (event, visible) {
-  if (visible == true) {
-    $('.vision-svg').css('display', 'block');
-    $('.wall-svg').css('display', 'none');
-    $('.icons-svg').css('display', 'none');
-  } else {
-    $('.vision-svg').css('display', 'none');
-  }
-});
-$('#third').on('inview', function (event, visible) {
- if (visible == true) {
-   $('.vision-svg').css('display', 'none');
-   $('.wall-svg').css('display', 'none');
-   $('.icons-svg').css('display', 'block');
- } else {
-   $('.icons-svg').css('display', 'none');
- }
-});
+ $('.next').on('click', function(e) {
+   e.preventDefault()
+   $('.carousel').carousel('next')
+ });
+ $('.prev').on('click', function(e) {
+   e.preventDefault()
+   $('.carousel').carousel('prev')
+ });
 
 });
 // Project type id
