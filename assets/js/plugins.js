@@ -78,6 +78,20 @@ $(".switch").on("change", function(event) {
    $('.carousel').carousel('prev')
  });
 
+ jQuery(function ($) {
+     $('.carousel').carousel();
+     var caption = $('div.carousel-item:nth-child(1) .carousel-caption');
+     console.log(caption);
+     $('.new-caption-area').html(caption.html());
+     caption.css('display', 'none');
+
+     $(".carousel").on('slide.bs.carousel', function (evt) {
+         var caption = $('div.carousel-item:nth-child(' + ($(evt.relatedTarget).index() + 1) + ') .carousel-caption');
+         $('.new-caption-area').html(caption.html());
+         caption.css('display', 'none');
+     });
+ });
+
 });
 // Project type id
   function assignProjectType (el) {

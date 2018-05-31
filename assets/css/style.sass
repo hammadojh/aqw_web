@@ -27,6 +27,8 @@ body
   text-align: right
   color: $darkSilver
   overflow: hidden
+body::-webkit-scrollbar
+  display: none
 .body-overflow
   overflow: auto
 .line-height-45
@@ -84,7 +86,7 @@ h1, h2, h3, h4, h5, h6
   transition: all ease-out 0.3s
   h5
     font-size: 28px !important
-ul
+.contact-list
   margin-bottom: 0px
   .list-inline-item
     margin-right: 0.5rem
@@ -308,15 +310,43 @@ section
   z-index: 9
 /********************Meen aqwas********************/
 #meen-aqwas
+  width: 45vw
   .carousel-item
     height: 150px
-.aqwas-controls
-  float: left
-  position: relative
-  z-index: 5
-  left: 5px
-  div
+  .carousel-indicators
+    padding: 0
+    padding-bottom: 0px
+    top: 120%
+    li
+      background-color: $lightSilver
+      cursor: auto
+      border-radius: 50px
+      width: 15px
+      height: 15px
+  .carousel-indicators .active
+    background-color: $color-1
+  .carousel-control-next-icon
+    background-image: url('../images/svg/arrow_right.svg')
+  .carousel-control-prev-icon
+    background-image: url('../images/svg/arrow_left.svg')
+  .carousel-control-prev, .carousel-control-next
+    opacity: 1
+    width: 80%
+    top: 125%
+  .next, .prev
     cursor: pointer
+  .new-caption-area
+    width: 100px
+    float: left
+    position: relative
+    top: 25px
+    left: 129px
+    color: $color-1
+    h5
+      animation: fadein 1s
+      -moz-animation: fadein 1s
+      -webkit-animation: fadein 1s
+      -o-animation: fadein 1s
 .images
   position: fixed
   top: 0px
