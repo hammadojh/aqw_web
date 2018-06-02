@@ -29,6 +29,8 @@ body
   overflow: hidden
 body::-webkit-scrollbar
   display: none
+  -ms-overflow-style: none
+  overflow: -moz-scrollbars-none
 .body-overflow
   overflow: auto
 .line-height-45
@@ -42,6 +44,12 @@ a:active, a:focus, a:hover
   color: $color-1
 h1, h2, h3, h4, h5, h6
    font-family: RegularFont
+.p-left-0
+  padding-left: 0px
+.p-right-0
+  padding-right: 0px
+.col-width
+  max-width: 12%
 /********************Main page********************/
 .card
   border: none
@@ -68,6 +76,10 @@ h1, h2, h3, h4, h5, h6
     h5
       color: $white
       font-size: 3em
+  .card-hover
+    &:hover
+      transform: none
+      transition: none
   .card-body
     display: none
     padding: 0px
@@ -90,10 +102,16 @@ h1, h2, h3, h4, h5, h6
   margin-bottom: 0px
   .list-inline-item
     margin-right: 0.5rem
-    img
+    svg
       margin-left: 10px
       margin-right: 10px
       height: 7vh
+      &:hover
+        .contact-1, .twitter-1, .email-1
+          fill: $color-5
+        circle
+          fill: $white
+          transition: fill ease-out 0.3s
 /********************News********************/
 #news
   max-width: 720px
@@ -310,19 +328,18 @@ section
   z-index: 9
 /********************Meen aqwas********************/
 #meen-aqwas
-  width: 45vw
   .carousel-item
     height: 150px
   .carousel-indicators
     padding: 0
     padding-bottom: 0px
-    top: 120%
+    top: 140%
     li
       background-color: $lightSilver
       cursor: auto
       border-radius: 50px
-      width: 15px
-      height: 15px
+      width: 10px
+      height: 10px
   .carousel-indicators .active
     background-color: $color-1
   .carousel-control-next-icon
@@ -331,28 +348,29 @@ section
     background-image: url('../images/svg/arrow_left.svg')
   .carousel-control-prev, .carousel-control-next
     opacity: 1
-    width: 80%
-    top: 125%
+    width: 85%
+    top: 143%
   .next, .prev
     cursor: pointer
   .new-caption-area
     width: 100px
     float: left
     position: relative
-    top: 25px
-    left: 129px
+    top: 50px
+    left: 118px
     color: $color-1
-    h5
-      animation: fadein 1s
-      -moz-animation: fadein 1s
-      -webkit-animation: fadein 1s
-      -o-animation: fadein 1s
+    opacity: 0
+#meen-aqwas:hover
+  .new-caption-area
+    opacity: 1
+    transition: opacity ease-out 0.3s
+  .carousel-control-prev-icon
+    background-image: url('../images/svg/arrow_left_blue.svg')
 .images
   position: fixed
   top: 0px
   left: 0px
-  width: 50vw
-  height: 100vh
+  height: 80vh
   display: flex
   -webkit-justify-content: center
   justify-content: center
@@ -361,9 +379,6 @@ section
   img
     margin-top: -38px
     z-index: 99999
-.content-container
-  width: 50vw
-  height: 80vh
 .content
   height: 80vh
   -webkit-align-items: center
@@ -476,3 +491,5 @@ section
     margin-bottom: 0px
   .content
     height: 82vh
+  .col-width
+    max-width: 25%
