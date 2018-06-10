@@ -69,7 +69,7 @@ $(".switch").on("change", function(event) {
  });
 
 // SVG
- $('.next').on('click', function(e) {
+ $('.next, .new-caption-area').on('click', function(e) {
    e.preventDefault()
    $('.carousel').carousel('next')
  });

@@ -70,6 +70,7 @@ h1, h2, h3, h4, h5, h6
       transform: scale3d(1.01, 1.01, 1)
       -webkit-transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)
       transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)
+      transition: height ease-out 0.3s
     .arrow-up
       height: 15px
       display: none
@@ -80,6 +81,7 @@ h1, h2, h3, h4, h5, h6
     &:hover
       transform: none
       transition: none
+      cursor: auto
   .card-body
     display: none
     padding: 0px
@@ -249,6 +251,9 @@ h1, h2, h3, h4, h5, h6
   margin: 0 auto
 .uppercase-text
   text-transform: uppercase
+.small-text
+  font-size: 11px
+  letter-spacing: 3px
 form
     select.form-control
       height: 38px !important
@@ -323,9 +328,11 @@ section
   width: 100%
 .fixed-btn
   position: fixed
-  bottom: 15px
-  left: 15px
+  bottom: 8px
+  left: 8px
   z-index: 9
+.fixed-btn.btn-shadow
+  box-shadow: none
 /********************Meen aqwas********************/
 #meen-aqwas
   .carousel-item
@@ -360,25 +367,15 @@ section
     left: 118px
     color: $color-1
     opacity: 0
+    cursor: pointer
 #meen-aqwas:hover
   .new-caption-area
     opacity: 1
     transition: opacity ease-out 0.3s
   .carousel-control-prev-icon
     background-image: url('../images/svg/arrow_left_blue.svg')
-.images
-  position: fixed
-  top: 0px
-  left: 0px
-  height: 80vh
-  display: flex
-  -webkit-justify-content: center
-  justify-content: center
-  -webkit-align-items: center
-  align-items: center
-  img
-    margin-top: -38px
-    z-index: 99999
+.character-img
+  height: 300px
 .content
   height: 80vh
   -webkit-align-items: center
@@ -386,22 +383,7 @@ section
   -webkit-justify-content: space-between
   justify-content: space-between
   display: flex
-.wall-svg, .mobile-svg
-  display: block
-  height: 180px
-  width: 100%
-  transition: transform 500ms ease-in-out
-  #Layer_1-2
-    animation: fadein 2s
-    -moz-animation: fadein 2s
-    -webkit-animation: fadein 2s
-    -o-animation: fadein 2s
-  g
-    stroke-dasharray: 1000
-    stroke-dashoffset: 1000
-    animation-delay: 3s
-    animation: dash 5s linear forwards
-.vision-svg, .icons-svg
+.wall-svg, .vision-svg, .icons-svg
   display: block
   height: 180px
   width: 100%
@@ -480,16 +462,23 @@ section
     width: 100%
   .bg-imgs
     display: none
-  .hidden-xs
-    display: none
-  .visible-xs
-    display: block
   .project
     margin-top: 50px
     margin-bottom: 70px
   .clients, #projects
     margin-bottom: 0px
   .content
-    height: 82vh
+    height: 40vh
+    margin-top: -65px
+    margin-bottom: 30px
   .col-width
     max-width: 25%
+  .new-caption-area
+    display: none
+  #meen-aqwas .carousel-control-prev, #meen-aqwas .carousel-control-next
+    width: 65%
+  .wall-svg, .vision-svg, .icons-svg
+    height: 100px
+  .character-img
+    height: 200px
+    margin-bottom: 25px
