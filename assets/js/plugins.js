@@ -1,4 +1,10 @@
 $(document).ready(function(){
+  // Stop
+stopAnimation();
+function stopAnimation(){
+  $("#animation").css('display', 'none');
+  loadMenu();
+}
   // Animation
   var animation = bodymovin.loadAnimation({
     container: document.getElementById("bm"),
