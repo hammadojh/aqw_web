@@ -38,11 +38,12 @@ body::-webkit-scrollbar
 .form-control:focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, .form-control:focus, .form-control:hover
   outline: 0
   box-shadow: none
+  border-color: $color-1
 a:active, a:focus, a:hover
    text-decoration: none
 .main-heading
   color: $color-1
-h1, h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6, .form-text
    font-family: RegularFont
 .p-left-0
   padding-left: 0px
@@ -51,6 +52,36 @@ h1, h2, h3, h4, h5, h6
 .col-width
   max-width: 12%
 /********************Main page********************/
+#animation
+  display: flex
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-align-items: center
+  align-items: center
+  height: 100vh
+@-webkit-keyframes fadeOut
+  0%
+    opacity: 1
+
+  100%
+    opacity: 0
+@keyframes fadeOut
+  0%
+    opacity: 1
+
+  100%
+    opacity: 0
+.fadeOut
+  -webkit-animation-name: fadeOut
+  animation-name: fadeOut
+#menu
+  display: none
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-flex-direction: column
+  -ms-flex-direction: column
+  flex-direction: column
+  height: 100vh
 .card
   border: none
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1)
@@ -262,6 +293,8 @@ form
       border-bottom: 1px solid $lightSilver
       border-radius: 0px
       box-shadow: none
+.form-text.text-muted
+  color: $color-1 !important
 .ltr-styled-select
   background: url('../images/svg/arrow_down_blue.svg') no-repeat right
   -webkit-appearance: none

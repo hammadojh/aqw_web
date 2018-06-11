@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>أقواس</title>
     <meta charset="utf-8">
@@ -14,9 +13,13 @@
 
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
 </head>
-
 <body>
+  <div id="animation" class="container">
+  <div id="bm" class="row"></div>
+</div>
+<div id="menu">
     <div class="card">
         <div class="card-header">
             <h5 class="mb-0">
@@ -684,23 +687,26 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-12 col-form-label">اسمك الكامل</label>
                                     <div class="col-sm-2 col-4">
-                                        <select class="form-control form-control-sm rtl-styled-select" name="Title" id="title">
+                                        <select class="form-control form-control-sm rtl-styled-select" name="Title" id="title" required>
                                             <option>السيد</option>
                                             <option>السيدة</option>
                                           </select>
+                                          <small class="form-text text-muted mt-2"></small>
                                     </div>
                                     <div class="col-sm-7 col-8">
-                                        <input type="text" class="form-control" name="FullName" id="full-name">
+                                        <input type="text" class="form-control" name="FullName" id="full-name" required>
+                                        <small class="form-text text-muted mt-2"></small>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-12 col-form-label">رقم الجوال</label>
 
                                     <div class="col-sm-7 col-8 ltr-input">
-                                        <input type="text" class="form-control" name="MobileNumber">
+                                        <input type="text" class="form-control" name="MobileNumber" required>
+                                        <small class="form-text text-muted mt-2"></small>
                                     </div>
                                     <div class="col-sm-2 col-4">
-                                        <select class="form-control form-control-sm ltr-styled-select" name="CountryCode" dir="ltr">
+                                        <select class="form-control form-control-sm ltr-styled-select" name="CountryCode" dir="ltr" required>
                                             <option value="+966">+966</option>
                                             <option value="+971">+971</option>
                                             <option value="+974">+974</option>
@@ -713,6 +719,7 @@
                                             <option value="+963">+963</option>
                                             <option value="+967">+967</option>
                                           </select>
+                                          <small class="form-text text-muted mt-2"></small>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -780,11 +787,24 @@
             </div>
         </div>
     </div>
-
+  </div>
     <script src="assets/js/jquery-2.2.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/wow.js"></script>
     <script src="assets/js/jquery.serialize-object.min.js"></script>
+    <script src="assets/js/lottie.min.js"> </script>
     <script src="assets/js/plugins.js"></script>
+    <script>
+        wow = new WOW(
+           {
+           boxClass:     'wow',
+           animateClass: 'animated',
+           offset:       400,
+           mobile:       true,
+           live:         true
+         }
+         )
+         wow.init();
+    </script>
 </body>
-
 </html>

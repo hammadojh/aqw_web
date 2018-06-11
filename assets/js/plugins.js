@@ -1,5 +1,26 @@
 $(document).ready(function(){
-
+  // Animation
+  var animation = bodymovin.loadAnimation({
+    container: document.getElementById("bm"),
+    renderer: 'svg',
+    autoplay: true,
+    loop:false,
+    path: 'assets/logo_animation.json' // the path to the animation json
+  });
+// When completed
+  animation.addEventListener("complete",function(){
+    loadMenu();
+  })
+// Load menu
+  function loadMenu(){
+    $("#animation.container").fadeOut('slow', function() {
+      $("#menu").fadeIn('slow', function() {
+        $("#menu").css({
+          display: 'block'
+        });
+      });
+    });
+  }
 // Colors
   var aqwasColors = ['#4ABDB7','#47B8B9','#44B1BA','#3FA9BD','#3B9DBF']
   $(".card-header").each(function(index){
@@ -32,6 +53,11 @@ $(document).ready(function(){
 
   $('#submit-form').on('click', function(e) {
     e.preventDefault();
+    $(':input[required]:visible').each(function() {
+      if ($(this).val() == '') {
+        $('small.form-text').text('هذا الحقل مطلوب');
+      }
+    });
     var fullName = $('#full-name').val();
     var jqxhr = $.ajax({
       url: url,
@@ -96,7 +122,7 @@ $(".switch").on("change", function(event) {
 // Project type id
   function assignProjectType (el) {
      $('#project-type').val(el.id);
-     $('.project-type').removeClass('selected');
+     // $('.project-type').removeClass('selected');
      $(el).addClass('selected');
   }
 // Project field id
@@ -156,10 +182,10 @@ $.getJSON("projects_data.json", function(json) {
       var html = `
       <div id="`+item.abr+`" class="project">
       <div class="bg-imgs">
-      <img class="img img-responsive" src="assets/images/projects/`+item.abr+`_r.png" alt="">
-      <img class="img img-responsive" src="assets/images/projects/`+item.abr+`_l.png" alt="">
+      <img class="img img-responsive wow fadeInUp" src="assets/images/projects/`+item.abr+`_r.png" alt="">
+      <img class="img img-responsive wow fadeInUp" src="assets/images/projects/`+item.abr+`_l.png" alt="">
       </div>
-      <img src="assets/images/projects/`+item.abr+`_icn.png" alt="" class="project-icon">
+      <img src="assets/images/projects/`+item.abr+`_icn.png" alt="" class="project-icon wow fadeInUp">
       <div class="project-name">
       <p class="app">`+item.type+`</p>
       <h2 class="name">`+item.name+`</h2>
