@@ -796,16 +796,15 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script>
-    wow = new WOW(
-       {
-       boxClass:     'wow',
-       animateClass: 'animated',
-       offset:       250,
-       mobile:       true,
-       live:         true
-      }
-      )
-      wow.init();
+    window.addEventListener('scroll', function(e) {
+
+       if( $(window).scrollTop() <= 150) {
+           $('.wow').removeClass('animated');
+           $('.wow').removeAttr('style');
+           new WOW().init();
+       }
+
+    });
     </script>
 </body>
 </html>
