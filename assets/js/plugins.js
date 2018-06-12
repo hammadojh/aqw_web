@@ -125,12 +125,14 @@ $(".switch").on("change", function(event) {
  });
 
 });
+
 // Project type id
-  function assignProjectType (el) {
-     $('#project-type').val(el.id);
-     // $('.project-type').removeClass('selected');
-     $(el).addClass('selected');
-  }
+let ids = [];
+$(".project-type").on("click", function(){
+  ids.indexOf(this.id) === -1 ? ids.push(this.id) : ids.splice(ids.indexOf(this.id),1);
+  $(this).toggleClass('selected');
+  $('#project-type').val(ids.join(", "));
+});
 // Project field id
   function assignProjectField (el) {
      $('#project-field').val(el.id);
